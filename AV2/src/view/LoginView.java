@@ -10,6 +10,7 @@ public class LoginView implements ActionListener {
     private JLabel pessoa;
     private JLabel senha;
     private JLabel cd;
+    private JLabel resultado;
     private JTextField txtnum1;
     private JTextField txtnum2;
     private JButton btnLg;
@@ -33,10 +34,11 @@ public class LoginView implements ActionListener {
         btnLg.addActionListener(new ActionListener() {
             @Override public void actionPerformed(ActionEvent e) {
                 PessoaView view = new PessoaView();
-                view.Login(txtnum1,txtnum2);
+                view.Login(txtnum1,txtnum2,resultado);
               }
             });
-
+        resultado = new JLabel(" ");
+        painel.add(resultado);
         painel.add(btnLg);
         cd = new JLabel("Se cadastrar :");
         painel.add(cd);

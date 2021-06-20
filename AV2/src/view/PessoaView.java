@@ -9,7 +9,7 @@ import controller.PessoaController;
 
 public class PessoaView {
 	
-	public void Login(JTextField cpf , JTextField senha)
+	public void Login(JTextField cpf , JTextField senha, JLabel resultado)
 	{
 		String cpf1 = cpf.getText().trim();
 		String senha2 = senha.getText().trim();
@@ -23,7 +23,7 @@ public class PessoaView {
 		}
 		catch(Exception e)
 		{
-			System.out.println("Acesso Negado");
+			resultado.setText("Acesso Negado");
 			System.out.println(e);
 		}
 		

@@ -10,16 +10,17 @@ import jdbc.ConnectionFactory;
 
 public class PessoaDAO {
 	
-	public Pessoa login() {
+	public Pessoa login(Pessoa pessoa) {
 		
 		Connection banco = ConnectionFactory.getConnection();
 		
 		PreparedStatement stmt = null ;
 		ResultSet rs = null ;
-		String sql = "select cpf,senha from pessoa";
+		String sql = "select cpf,senha from pessoa where cpf = (?)";
 		Pessoa pessoa1 = new Pessoa();
 		try {
 			stmt = banco.prepareStatement(sql);
+			stmt.setString(1, pessoa.getCpf());
 			rs = stmt.executeQuery();
 			
 			while(rs.next()) {

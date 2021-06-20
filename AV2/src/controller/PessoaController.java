@@ -24,7 +24,7 @@ public class PessoaController {
 	public void delete(Pessoa pessoa) throws SQLException {
 		Pessoa resposta = new Pessoa();
 		PessoaDAO model = new PessoaDAO();
-		resposta = model.login();
+		resposta = model.login(pessoa);
 		
 		if (resposta.getCpf().equalsIgnoreCase(pessoa.getCpf()) && resposta.getSenha().equalsIgnoreCase(pessoa.getSenha())) {
 			System.out.println("Dados Certos !");
@@ -39,7 +39,7 @@ public class PessoaController {
 		
 		Pessoa resposta = new Pessoa();
 		PessoaDAO model = new PessoaDAO();
-		resposta = model.login();
+		resposta = model.login(pessoa);
 		
 		if (resposta.getCpf().equalsIgnoreCase(pessoa.getCpf()) && resposta.getSenha().equalsIgnoreCase(pessoa.getSenha())) {
 			System.out.println("Acesso permitido");
