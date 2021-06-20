@@ -17,6 +17,7 @@ public class LoginView implements ActionListener {
     private JButton btncd;
     public LoginView()
     {
+    	
     	janela = new JFrame();
         painel = new JPanel();
         pessoa = new JLabel("CPF: ");
